@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+</head>
+
+<body>
+    <div class="container">
+        {% for x in range(0,rows): %}
+        <div class="row">
+            {% if x%2 == 0 %}   {% for y in range(0,cols): %} {% if y%2 == 0 %}
+            <div class="block {{color1}}"></div>
+            {% endif %} {% if y%2 != 0 %}
+            <div class="block {{color2}}"></div>
+            {% endif %} {% endfor %} {% endif %} {% if x%2 != 0 %}   {% for y in range(0,cols): %} {% if y%2 == 0 %}
+            <div class="block {{color2}}"></div>
+            {% endif %} {% if y%2 != 0 %}
+            <div class="block  {{color1}}"></div>
+            {% endif %} {% endfor %} {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
